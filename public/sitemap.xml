@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Public routes only. Project pages are omitted while `placeholderProjects`
+     is true, and /privacy and /terms are noindex pending legal review.
+     Catalog routes are listed here. While the placeholder flags in
+     src/data/*.js are true those pages render with noindex, so Google will
+     simply skip them until you replace the data and flip the flags. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://carthagevisions.om/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://carthagevisions.om/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://carthagevisions.om/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://carthagevisions.om/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url><loc>https://carthagevisions.om/products</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://carthagevisions.om/products/cctv</loc><priority>0.8</priority></url>
+  <url><loc>https://carthagevisions.om/products/ip-ptz</loc><priority>0.8</priority></url>
+  <url><loc>https://carthagevisions.om/products/nvr-dvr</loc><priority>0.8</priority></url>
+  <url><loc>https://carthagevisions.om/products/access-control</loc><priority>0.8</priority></url>
+  <url><loc>https://carthagevisions.om/products/alarms</loc><priority>0.8</priority></url>
+  <url><loc>https://carthagevisions.om/products/intercom</loc><priority>0.8</priority></url>
+  <url><loc>https://carthagevisions.om/products/accessories</loc><priority>0.8</priority></url>
+  <url><loc>https://carthagevisions.om/packages</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://carthagevisions.om/solutions</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://carthagevisions.om/solutions/homes-villas</loc><priority>0.8</priority></url>
+  <url><loc>https://carthagevisions.om/solutions/shops-retail</loc><priority>0.8</priority></url>
+  <url><loc>https://carthagevisions.om/solutions/offices</loc><priority>0.8</priority></url>
+  <url><loc>https://carthagevisions.om/solutions/farms-rural</loc><priority>0.8</priority></url>
+  <url><loc>https://carthagevisions.om/solutions/warehouses-sites</loc><priority>0.8</priority></url>
+  <url><loc>https://carthagevisions.om/services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://carthagevisions.om/site-survey</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://carthagevisions.om/support</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://carthagevisions.om/projects</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://carthagevisions.om/brands</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://carthagevisions.om/about</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://carthagevisions.om/blog</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://carthagevisions.om/faq</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://carthagevisions.om/contact</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://carthagevisions.om/blog/choosing-cameras-for-a-villa</loc><priority>0.6</priority></url>
+  <url><loc>https://carthagevisions.om/blog/night-vision-explained</loc><priority>0.6</priority></url>
+  <url><loc>https://carthagevisions.om/blog/how-many-cameras-do-you-need</loc><priority>0.6</priority></url>
+  <url><loc>https://carthagevisions.om/blog/protecting-your-shop</loc><priority>0.6</priority></url>
+  <url><loc>https://carthagevisions.om/blog/remote-viewing-safely</loc><priority>0.6</priority></url>
+</urlset>

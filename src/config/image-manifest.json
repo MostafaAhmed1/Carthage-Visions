@@ -1,0 +1,127 @@
+{
+  "hero-poster": [
+    480,
+    800,
+    1024
+  ],
+  "og": [
+    480,
+    800,
+    1200
+  ],
+  "product-access": [
+    480,
+    800,
+    1024
+  ],
+  "product-alarm": [
+    480,
+    800,
+    1200
+  ],
+  "product-bullet": [
+    480,
+    800,
+    1200
+  ],
+  "product-cable": [
+    480,
+    800,
+    1200
+  ],
+  "product-dome": [
+    480,
+    800,
+    1024
+  ],
+  "product-hdd": [
+    480,
+    800,
+    1024
+  ],
+  "product-intercom": [
+    480,
+    800,
+    1024
+  ],
+  "product-motion": [
+    480,
+    800,
+    1122
+  ],
+  "product-nvr": [
+    480,
+    800,
+    1024
+  ],
+  "product-ptz": [
+    480,
+    800,
+    1024
+  ],
+  "product-smartlock": [
+    480,
+    800,
+    1024
+  ],
+  "product-turret": [
+    480,
+    800,
+    1200
+  ],
+  "project-retail": [
+    480,
+    800,
+    1200
+  ],
+  "project-villa": [
+    480,
+    800,
+    1200
+  ],
+  "scene-construction": [
+    480,
+    800,
+    1200
+  ],
+  "scene-farm": [
+    480,
+    800,
+    1200
+  ],
+  "scene-office": [
+    480,
+    800,
+    1200
+  ],
+  "scene-shopfront": [
+    480,
+    800,
+    1200
+  ],
+  "scene-villa-garden": [
+    480,
+    800,
+    1200
+  ],
+  "scene-warehouse": [
+    480,
+    800,
+    1200
+  ],
+  "solution-business": [
+    480,
+    800,
+    1200
+  ],
+  "solution-home": [
+    480,
+    800,
+    1200
+  ],
+  "solution-site": [
+    480,
+    800,
+    1200
+  ]
+}
