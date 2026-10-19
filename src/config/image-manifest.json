@@ -1,0 +1,57 @@
+{
+  "hero-poster": [
+    480,
+    800,
+    1024
+  ],
+  "og": [
+    480,
+    800,
+    1200
+  ],
+  "product-access": [
+    480,
+    800,
+    1024
+  ],
+  "product-bullet": [
+    480,
+    800,
+    1200
+  ],
+  "product-dome": [
+    480,
+    800,
+    1024
+  ],
+  "product-nvr": [
+    480,
+    800,
+    1024
+  ],
+  "project-retail": [
+    480,
+    800,
+    1200
+  ],
+  "project-villa": [
+    480,
+    800,
+    1200
+  ],
+  "solution-business": [
+    480,
+    800,
+    1200
+  ],
+  "solution-home": [
+    480,
+    800,
+    1200
+  ],
+  "solution-site": [
+    480,
+    800,
+    1200
+  ]
+}
