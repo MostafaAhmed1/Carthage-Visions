@@ -1,0 +1,44 @@
+{
+  "name": "carthage-visions",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "lint": "eslint src scripts",
+    "images": "node scripts/optimize-images.mjs",
+    "check:i18n": "node scripts/check-i18n.mjs",
+    "smoke:render": "node scripts/ssr-smoke.mjs ar"
+  },
+  "dependencies": {
+    "@fontsource/amiri": "^5.0.20",
+    "@fontsource/cormorant-garamond": "^5.0.20",
+    "@fontsource/ibm-plex-sans-arabic": "^5.0.20",
+    "@fontsource/manrope": "^5.0.20",
+    "@react-three/drei": "^9.112.0",
+    "@react-three/fiber": "^8.17.8",
+    "framer-motion": "^11.5.4",
+    "gsap": "^3.12.5",
+    "i18next": "^23.15.1",
+    "i18next-browser-languagedetector": "^8.0.0",
+    "lenis": "^1.1.9",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-helmet-async": "^2.0.5",
+    "react-i18next": "^15.0.1",
+    "react-router-dom": "^6.26.2",
+    "three": "^0.169.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "esbuild": "^0.28.2",
+    "eslint": "^9.9.0",
+    "postcss": "^8.4.41",
+    "sharp": "^0.33.5",
+    "tailwindcss": "^3.4.10",
+    "vite": "^5.4.2"
+  }
+}

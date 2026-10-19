@@ -1,0 +1,316 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Design tokens — re-theme the whole site from this block.
+   Colours are stored as RGB channels so Tailwind can apply opacity.
+   ========================================================================== */
+:root {
+  /* Surfaces */
+  --c-ink: 20 17 14; /* deep warm charcoal */
+  --c-ink-2: 30 25 20;
+  --c-ink-3: 45 38 31;
+  --c-ivory: 246 241 232;
+  --c-sand: 232 220 200;
+  --c-sand-deep: 213 196 170;
+
+  /* Single accent + micro accents */
+  --c-brass: 176 141 87;
+  --c-brass-soft: 201 168 106;
+  --c-brass-deep: 106 78 37; /* AA-safe brass for text on ivory */
+  --c-green: 46 64 52;
+  --c-terracotta: 168 92 62;
+
+  /* Type */
+  /* Arabic faces first, with the Latin companions behind them so mixed
+     Arabic/Latin lines never fall back to a system font. */
+  --font-arabic-display: 'Amiri', 'Cormorant Garamond', 'Noto Naskh Arabic', serif;
+  --font-arabic-body: 'IBM Plex Sans Arabic', 'Manrope', 'Segoe UI', sans-serif;
+  --font-latin-display: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-latin-body: 'Manrope', 'Inter', system-ui, sans-serif;
+
+  --font-display: var(--font-latin-display);
+  --font-body: var(--font-latin-body);
+
+  /* Motion */
+  --ease-calm: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-quick: 180ms;
+  --dur-base: 320ms;
+  --dur-slow: 720ms;
+
+  /* Layout */
+  --header-h: 4.75rem;
+  --mobile-bar-h: 4.5rem;
+  --focus: 106 78 37; /* brass-deep: AA-safe on ivory */
+}
+
+html[lang='ar'] {
+  --font-display: var(--font-arabic-display);
+  --font-body: var(--font-arabic-body);
+}
+
+/* Arabic snippets on the English page (e.g. the language switch) */
+html[lang='en'] [lang='ar'] {
+  font-family: var(--font-arabic-body);
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    background-color: rgb(var(--c-ink));
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-ivory font-body text-ink antialiased;
+    font-size: 1rem;
+    line-height: 1.75;
+    overflow-x: hidden;
+    font-synthesis-weight: none;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html[lang='ar'] body {
+    line-height: 1.85;
+  }
+
+  /* Arabic benefits from slightly looser headings and no negative tracking. */
+  html[lang='ar'] :is(h1, h2, h3, h4) {
+    letter-spacing: 0 !important;
+  }
+
+  html[lang='ar'] .font-display {
+    padding-block-start: 0.15em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-normal;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: rgb(var(--c-brass) / 0.28);
+    color: rgb(var(--c-ink));
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--focus));
+    outline-offset: 3px;
+    /* Light halo keeps the ring visible on dark surfaces too. */
+    box-shadow: 0 0 0 6px rgb(246 241 232 / 0.35);
+    border-radius: 2px;
+  }
+
+  /* Buttons and links should never show a focus ring for pointer users. */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  img,
+  video {
+    @apply block max-w-full;
+  }
+
+  button {
+    font: inherit;
+  }
+
+  /* Lenis */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+}
+
+/* ==========================================================================
+   Components / utilities
+   ========================================================================== */
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-shell ps-gutter pe-gutter;
+  }
+
+  .hairline {
+    @apply border-ink/10;
+  }
+
+  .hairline-dark {
+    @apply border-ivory/12;
+  }
+
+  .eyebrow {
+    @apply font-body text-micro font-medium uppercase tracking-[0.18em] text-brass-deep;
+  }
+
+  html[lang='ar'] .eyebrow {
+    @apply tracking-normal;
+  }
+
+  .eyebrow-light {
+    @apply text-brass-soft;
+  }
+
+  .lede {
+    @apply text-lede text-ink/70;
+  }
+
+  .body-muted {
+    @apply text-ink/65;
+  }
+
+  .rule {
+    @apply h-px w-full bg-ink/10;
+  }
+
+  /* Arch-shaped image mask — the recurring Omani motif. */
+  .arch-mask {
+    clip-path: url(#arch-clip);
+  }
+
+  .arch-mask-soft {
+    border-radius: 50% 50% 0.75rem 0.75rem / 32% 32% 0.75rem 0.75rem;
+  }
+
+  /* Arabesque background texture — one pattern, very low opacity. */
+  .arabesque {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='none' stroke='%23c9a86a' stroke-width='1' stroke-opacity='0.9'%3E%3Cpath d='M70 0 140 70 70 140 0 70Z'/%3E%3Cpath d='M0 0h140v140H0z'/%3E%3Cpath d='M70 26 114 70 70 114 26 70Z'/%3E%3Cpath d='M44 44h52v52H44z'/%3E%3Ccircle cx='70' cy='70' r='30'/%3E%3Cpath d='M70 0v26M70 114v26M0 70h26M114 70h140M0 70h140' opacity='0.5'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 140px 140px;
+    background-repeat: repeat;
+  }
+
+  /* Fine film grain, sits above imagery. */
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.16;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    background-size: 220px 220px;
+  }
+
+  .vignette::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(120% 90% at 50% 45%, transparent 40%, rgb(20 17 14 / 0.55) 100%);
+  }
+
+  .text-shadow-soft {
+    text-shadow: 0 1px 30px rgb(20 17 14 / 0.35);
+  }
+
+  /* Slow marquee: duplicated track, pauses on hover, static on reduced motion. */
+  .marquee {
+    @apply relative overflow-hidden;
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+
+  html[dir='rtl'] .marquee {
+    mask-image: linear-gradient(to left, transparent, black 8%, black 92%, transparent);
+    -webkit-mask-image: linear-gradient(to left, transparent, black 8%, black 92%, transparent);
+  }
+
+  .marquee__track {
+    @apply flex w-max items-center;
+  }
+
+  .marquee:hover .marquee__track,
+  .marquee:focus-within .marquee__track {
+    animation-play-state: paused;
+  }
+
+  .link-underline {
+    @apply relative inline-block;
+  }
+
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    bottom: -3px;
+    height: 1px;
+    width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform var(--dur-base) var(--ease-calm);
+  }
+
+  .link-underline:hover::after,
+  .link-underline:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  .skip-link {
+    @apply fixed z-[100] bg-ink px-4 py-3 text-ivory;
+    inset-block-start: -100px;
+    inset-inline-start: 1rem;
+  }
+
+  .skip-link:focus {
+    inset-block-start: 1rem;
+  }
+}
+
+@layer utilities {
+  .pe-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .text-vertical {
+    writing-mode: vertical-rl;
+  }
+
+  .scroll-mt-header {
+    scroll-margin-top: calc(var(--header-h) + 1.5rem);
+  }
+
+  .pause-offscreen {
+    animation-play-state: paused;
+  }
+
+  .pause-offscreen.is-visible,
+  .is-visible .pause-offscreen {
+    animation-play-state: running;
+  }
+}
+
+/* ==========================================================================
+   Motion — one global switch for prefers-reduced-motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,20 @@
+/* Fonts are self-hosted (no third-party requests) and all use font-display: swap. */
+
+/* Arabic UI / body — IBM Plex Sans Arabic */
+@import '@fontsource/ibm-plex-sans-arabic/arabic-400.css';
+@import '@fontsource/ibm-plex-sans-arabic/arabic-500.css';
+
+/* Arabic headlines — Amiri (naskh) */
+@import '@fontsource/amiri/arabic-400.css';
+@import '@fontsource/amiri/arabic-700.css';
+
+/* Latin headlines — Cormorant Garamond */
+@import '@fontsource/cormorant-garamond/latin-300.css';
+@import '@fontsource/cormorant-garamond/latin-400.css';
+@import '@fontsource/cormorant-garamond/latin-400-italic.css';
+@import '@fontsource/cormorant-garamond/latin-500.css';
+
+/* Latin body — Manrope */
+@import '@fontsource/manrope/latin-400.css';
+@import '@fontsource/manrope/latin-500.css';
+@import '@fontsource/manrope/latin-600.css';
