@@ -8,6 +8,8 @@
  */
 import { createServer } from 'vite'
 import { writeFile } from 'node:fs/promises'
+import os from 'node:os'
+import path from 'node:path'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { MemoryRouter, Routes, Route } from 'react-router-dom'
@@ -243,7 +245,7 @@ for (const lang of languages) {
       console.log(`   ${hasUrl ? '✓' : '✗'} whatsapp prefilled with product URL`)
       if (!hasUrl) failures += 1
     }
-    await writeFile(`/tmp/cv-${lang}-${test.name}.html`, html)
+    await writeFile(path.join(os.tmpdir(), `cv-${lang}-${test.name}.html`), html)
   }
 }
 
